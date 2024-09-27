@@ -1,0 +1,1727 @@
+<!-- code accordingly wordpress -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sportsguard_Data</title>
+  <style>
+        .mouthguard-customizer {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 50px;
+            background-color: white;
+            font-family: Arial, sans-serif;
+
+        }
+
+        .h2sportsguard{
+            margin-top: 10px;
+            margin-right: auto;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 40px;
+            font-weight: bolder;
+        }
+
+/*         .jerseynumber{
+            width: 30px;
+        } */
+			
+       .product-container{
+	   margin-right: auto;
+	   font-weight: 700px;
+	   margin-top: 40px;
+	}
+			
+	.inclusions_container{
+	   margin-top: 20px;
+	   margin-right: 510px;
+           font-weight: bold;
+           font-family: Arial, Helvetica, sans-serif;
+           font-size: 10px;
+	}
+			
+	.pcontainer{
+	  margin-right: auto;
+	  margin-top: 10px;
+	}
+
+        .price{
+            margin-right: 590px;
+            margin-top: -10px;
+            font-size: 20px;
+	    font-weight: lighter;
+        }
+
+        .mouthguard-container {
+/*          background-color: #ffffff; */
+            border-radius: 0px;
+            overflow: hidden;
+            max-width: 2500px;
+            width: 100%;
+            transition: all 0.3s ease;
+        }
+
+        .mouthguard-container.fullscreen {
+            width: 100% !important;
+            height: 100vh !important;
+            max-width: 100% !important;
+            max-height: 100vh !important;
+            border-radius: 0 !important;
+            position: fixed !important;
+            top: 0;
+            left: 0;
+            z-index: 9999;
+            background-color: #ffffff !important;
+            display: flex !important;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .mouthguard-split-container {
+            display: flex;
+            width: 100%;
+            flex-wrap: wrap;
+        }
+
+        .mouthguard-form-row {
+            flex-direction: column;
+            display: flex;
+            align-items: flex-start;
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .mouthguard-form-group {
+            display: flex;
+            flex-direction: column;
+	    width:100%;
+        }
+
+        select,
+        input[type="text"] {
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            width: 200px;
+            box-sizing: border-box;
+            margin-bottom: 5px;
+        }
+
+        select:invalid,
+        input[type="text"]:invalid {
+            border-color: red;
+        }
+
+        .mouthguard-error {
+            color: red;
+            font-size: 12px;
+            display: none;
+        }
+
+        select:invalid+.mouthguard-error,
+        input[type="text"]:invalid+.mouthguard-error {
+            display: block;
+        }
+
+        .product-overview {
+            padding: 20px;
+            max-width: 700px;
+/*             margin: auto;
+            margin-top: -40px; */
+            /* border: 2px solid black; */
+/*             overflow-x: auto; */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            /* margin-right: 610px; */
+            margin-left: -20px;
+        }
+
+        .inclusions{
+            margin-right: 20px;
+	    margin-top: 10px;
+        }
+
+        .inclusions-container {
+            display: flex;
+            gap: 20px;
+            overflow-x: auto;
+        }
+
+        .inclusion-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            min-width: 120px; /* Ensures items are the same size */
+        }
+
+        .inclusion-item img {
+            width: 50px;
+            height: 50px;
+            margin-bottom: 10px;
+        }
+
+
+        .mouthguard-left-side,
+        .mouthguard-right-side {
+            width: 50%;
+            padding: 20px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .mouthguard-right-side h3 {
+            color: #333;
+            margin-bottom: 20px;
+            text-align: center;
+            font-weight: 400;
+            font-size: 24px;
+        }
+
+        .mouthguard-btn {
+            width: 200%;
+            background-color: #000000;
+            color: #fff;
+            padding: 12px 20px;
+            border: none;
+            cursor: pointer;
+            margin-top: 20px;
+            /* margin-right: auto; */
+            transition: all 0.3s ease;
+            font-size: 16px;
+            max-width: 300px;
+            text-align: center;
+        }
+
+        .mouthguard-btn:hover {
+            background-color: #333333;
+            transform: translateY(-3px);
+        }
+
+        .mouthguard-guard-btn {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 15px;
+            border: 2px solid #ddd;
+            background-color: #f9f9f9;
+            cursor: pointer;
+            margin-bottom: 10px;
+            transition: all 0.3s ease;
+            border-radius: 8px;
+            width: 100%;
+            max-width: 300px;
+        }
+
+        .mouthguard-guard-btn img {
+            width: 50px;
+            height: 50px;
+            border-radius: 5px;
+        }
+
+        .mouthguard-guard-btn:hover {
+            background-color: #e0e0e0;
+            transform: translateY(-2px);
+            border-color: #000000;
+        }
+
+        .mouthguard-guard-btn.active {
+            background-color: #000000 !important;
+            color: white !important;
+            border-color: #000000 !important;
+        }
+
+        .guard-btn {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 15px;
+            border: 1px solid #ddd;
+            background-color: #f9f9f9;
+            cursor: pointer;
+            margin-bottom: 10px;
+            transition: all 0.3s ease;
+            border-radius: 8px;
+            width: 460px;
+            margin-right: 3px;
+        }
+
+        .guard-btn img {
+            width: 50px;
+            height: 50px;
+            border-radius: 5px;
+        }
+
+        .guard-btn:hover {
+            background-color: #e0e0e0;
+            transform: translateY(-2px);
+        }
+
+        .guard-btn.active {
+            background-color: #000000;
+            color: white;
+        }
+
+        .mouthguard-cancel-icon {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            cursor: pointer;
+            font-size: 24px;
+            color: #333;
+            transition: color 0.3s ease;
+        }
+
+        .mouthguard-cancel-icon:hover {
+            color: #000000;
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateY(50px);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .mouthguard-step {
+            display: none;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+
+        .mouthguard-step.active {
+            display: flex !important;
+            opacity: 1 !important;
+            animation: slideIn 0.5s ease forwards;
+        }
+
+        @media screen and (max-width: 768px) {
+            .mouthguard-split-container {
+                flex-direction: column;
+            }
+
+            .mouthguard-left-side,
+            .mouthguard-right-side {
+                width: 100%;
+                padding: 20px;
+            }
+
+            .mouthguard-container {
+                transform: scale(1) !important;
+            }
+        }
+
+        .mouthguard-features {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+            width: 100%;
+        }
+
+        .mouthguard-feature-icon {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-size: 12px;
+            color: #333;
+        }
+
+        .mouthguard-feature-icon img {
+            width: 40px;
+            height: 40px;
+            margin-bottom: 5px;
+        }
+
+        .customize-btn{
+            background-color: white;
+            color: black;
+            padding: 15px;
+            border: 1px solid black;
+            border-radius: 8px;
+            text-align: center;
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bolder;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            width: 100%;
+        }
+
+        .customize-btn:hover {
+            background-color: #00000032;
+        }
+
+        .mouthguard-cta-banner {
+            background-color: white;
+            color: black;
+            padding: 15px;
+            border: 1px solid black;
+            border-radius: 8px;
+            text-align: center;
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bolder;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            width: 95%;
+        }
+
+        .mouthguard-cta-banner:hover {
+            background-color: #00000030;
+        }
+
+        /* Carousel Styles */
+        .carousel-container {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .carousel-images {
+            display: flex;
+            flex-direction: column;
+            width: 90%;
+            position: relative;
+            align-items: center;
+            /* border: 1px solid black; */
+            margin-left: 33px;
+
+        }
+
+        .carousel-image {
+            width: 90%;
+            transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+            opacity: 0;
+            transform: translateY(100%);
+            display: none;
+        }
+
+        .carousel-image.active {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .carousel-arrow {
+            position: absolute;
+            top: 50%;
+            font-size: 25px;
+            cursor: pointer;
+            border: 1px solid rgba(0, 0, 0, 0.825);
+            background-color: rgba(0, 0, 0, 0);
+            color: rgba(0, 0, 0, 0.825);
+            padding: 10px;
+            border-radius: 50%;
+            transform: translateY(-80%);
+            z-index: 1;
+        }
+
+        .left-arrow {
+            left: 10px;
+        }
+
+        .right-arrow {
+            right: 10px;
+        }
+
+        .carousel-thumbnails {
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+        }
+
+        .thumbnail {
+            width: 60px;
+            height: 40px;
+            margin: 0 5px;
+            cursor: pointer;
+            opacity: 0.6;
+            transition: opacity 0.3s;
+        }
+
+        .thumbnail.active,
+        .thumbnail:hover {
+            opacity: 1;
+        }
+
+        @keyframes fadeSlide {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .carousel-image.transition {
+            animation: fadeSlide 0.5s ease forwards;
+        }
+
+        button#openPopupBtn {
+            background-color:#fff;
+            border: 2px solid #000000;
+            font-weight: bolder;
+            color: black;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: underline;
+        }
+
+        button#openPopupBtn:hover {
+            background-color: #23242443;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            /* background-color: rgba(0, 0, 0, 0.5); */
+            margin-top: -140px;
+
+        }
+
+        .modal-content {
+            background-color: white;
+            margin: 10% auto;
+            padding: 20px;
+            border: 1px solid #000000;
+            width: 80%;
+            max-width: 600px;
+            border-radius: 10px;
+            /* box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); */
+            position: relative;
+        }
+
+        .close {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            color: #aaa;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .thickness-guide {
+            padding: 20px;
+        }
+
+        .card {
+            display: flex;
+            align-items: center;
+            padding: 15px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .card:last-child {
+            border-bottom: none;
+        }
+
+        .image img {
+            width: 50px;
+            height: auto;
+            margin-right: 20px;
+        }
+
+        .content {
+            flex-grow: 1;
+        }
+
+        .content h3 {
+            margin: 0;
+            font-size: 18px;
+            color: #333;
+        }
+
+        .content p {
+            margin: 5px 0;
+            font-size: 14px;
+            color: #666;
+        }
+
+        @media screen and (max-width: 1024px) {
+
+            .mouthguard-split-container {
+                flex-direction: column;
+            }
+
+            .mouthguard-left-side
+            {
+                width: 100%;
+                padding: 20px;
+            }
+					  
+	   .mouthguard-right-side {
+		width: 100%;
+	   }
+
+            .mouthguard-container {
+                transform: scale(1) !important;
+            }
+
+            .mouthguard-btn {
+                width: 100%;
+                font-size: 14px;
+            }
+					
+	    .carousel-images{
+		margin-left: 20px;
+	    }
+
+            .h2sportsguard {
+                font-size: 28px; 
+		margin-left: 320px;
+		font-weight: bolder;
+            }
+
+            .price {
+                font-size: 18px; 
+                margin-left: 630px;
+		width: 100px;
+            }
+
+/*             .product-overview{
+                widows: 200px;
+            } */
+					
+
+	    .product-container{
+		margin-left: 220px;
+                font-weight: bolder;
+	    }
+
+            .pcontainer{
+                margin-left: 100px;
+                width: 700px;
+            }
+
+            .inclusions{
+               margin-left: -195px;
+              font-weight: bold;
+            }
+
+            .inclusions-container{
+		margin-left: 590px;
+		width: 600px;
+	  }
+	   .inclusions_container{
+		margin-left: 730px;
+		width: 300px;
+	 }
+					
+	    .discover_paragraph{
+		 margin-left: 70px;
+	   }
+					
+	  
+					
+/* 	.inclusion-item{
+	      margin-left: 120px;
+	      gap: 0px;
+	} */
+					
+	   
+
+            .carousel-container{
+                width: 85%;
+            }
+
+            .carousel-images{
+                margin-left: 35px;
+            }
+
+            #guard_position{
+                width: 0px;
+                margin-left: -60px;
+            }
+
+            .guard-btn{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 15px;
+            border: 1px solid #ddd;
+            background-color: #f9f9f9;
+            cursor: pointer;
+            margin-bottom: 10px;
+            transition: all 0.3s ease;
+            border-radius: 8px;
+            width: 170px;
+            margin-left: -70px;
+            }
+
+            .mouthguard-form-row{
+            flex-direction: column;
+            }
+
+            .modal-content{
+            margin-left: -220px;
+            }
+            }
+
+        @media screen and (max-width: 768px) {
+            .mouthguard-split-container {
+                flex-direction: column;
+                /* padding-top: 100px; */
+            }
+					
+	    .mouthguard-right-side{
+		text-align: center;
+	    }
+
+            .mouthguard-left-side,
+            .mouthguard-right-side {
+                width: 100%;
+                padding: 20px;
+            }
+
+            .mouthguard-container {
+                transform: scale(1) !important;
+            }
+
+            .mouthguard-btn {
+                width: 100%;
+            }
+
+
+            
+
+           .carousel-container{
+                width: 90%;
+           }
+            .mouthguard-split-container {
+                flex-direction: column;
+            }
+
+            .mouthguard-left-side
+            {
+                width: 100%;
+                padding: 20px;
+            }
+					  
+	  .mouthguard-right-side {
+		 width: 100%;
+	  }
+
+            .mouthguard-container {
+                transform: scale(1) !important;
+            }
+
+            .mouthguard-btn {
+                width: 100%;
+                font-size: 14px;
+            }
+
+           .discover_paragraph{
+	       margin-left: 30px;
+	   }
+		
+
+            .h2sportsguard {
+                font-size: 24px; 
+		 margin-left: 190px;							 
+              font-weight: bolder;
+            }
+
+            .price {
+                font-size: 18px; 
+                margin-left: 570px;
+	          width: 100px;
+            }
+					
+
+	    .product-container{
+		margin-left: 220px;
+                font-weight: bolder;
+            }	
+					
+	    			
+	    .pcontainer{
+                margin-left: 35px;
+                width: 600px;
+            }
+	  
+
+            .inclusions{
+              margin-left: -125px;
+              font-weight: bold;
+            }
+					
+            .inclusions-container{
+		margin-left: 520px;
+                width: 590px;
+
+           }
+
+           .inclusions_container{
+		margin-left: 660px;
+		width: 300px;
+           }
+        
+
+            .carousel-container{
+                width: 85%;
+            }
+
+            .carousel-images{
+                margin-left: 26px;
+            }
+
+            #guard_position{
+                width: 0px;
+                margin-left: -60px;
+            }
+
+            .guard-btn{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 15px;
+            border: 1px solid #ddd;
+            background-color: #f9f9f9;
+            cursor: pointer;
+            margin-bottom: 10px;
+            transition: all 0.3s ease;
+            border-radius: 8px;
+            width: 170px;
+            margin-left: -70px;
+            }
+
+            .mouthguard-form-row{
+            flex-direction: column;
+            }
+
+            .modal-content{
+            margin-left: -220px;
+            }
+            
+
+           .mouthguard-step mouthguard-step-2{
+            padding-top: 20px;
+           }
+
+           #thicknessModal{
+            margin-top: auto;
+            margin-left: 400px;
+            width: 60%;
+           }
+           
+        }
+
+        @media screen and (max-width: 480px) {
+
+            .mouthguard-split-container {
+                flex-direction: column;
+            }
+
+            .mouthguard-left-side,
+            .mouthguard-right-side {
+                width: 100%;
+                padding: 20px;
+            }
+
+            .mouthguard-container {
+                transform: scale(1) !important;
+            }
+
+            .mouthguard-btn {
+                width: 100%;
+                font-size: 14px;
+            }
+
+            .h2sportsguard {
+                font-size: 24px; 
+                margin-left: 35px;
+            }
+
+            .price {
+                font-size: 18px; 
+                margin-left: 600px;
+            }
+
+             .discover_paragraph{
+                margin-left: 13px;
+                width: 300px;
+             }
+
+             .product-container{
+		margin-left: 235px;
+                font-weight: bolder;
+            }	
+					
+	    			
+	    .pcontainer{
+                margin-left: 195px;
+                width: 300px;
+            }
+	  
+
+            .inclusions{
+              margin-left: -125px;
+              font-weight: bold;
+            }
+					
+            .inclusions-container{
+                flex-direction: column;
+		margin-left: 520px;
+                width: 590px;
+
+           }
+
+           .inclusions_container{
+		margin-left: 660px;
+		width: 300px;
+           }
+
+           .carousel-container{
+                width: 85%;
+           }
+
+           .carousel-images{
+                margin-left: 15px;
+           }
+
+           #guard_position{
+                width: 0px;
+                margin-left: -60px;
+           }
+
+           .guard-btn{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 15px;
+            border: 1px solid #ddd;
+            background-color: #f9f9f9;
+            cursor: pointer;
+            margin-bottom: 10px;
+            transition: all 0.3s ease;
+            border-radius: 8px;
+            width: 170px;
+            margin-left: -70px;
+           }
+
+           .mouthguard-form-row{
+            flex-direction: column;
+           }
+
+           .modal-content{
+            margin-left: -220px;
+           }
+        }
+
+        @media screen and (max-width: 320px) {
+
+            .mouthguard-split-container {
+                flex-direction: column;
+            }
+
+            .mouthguard-left-side,
+            .mouthguard-right-side {
+                width: 100%;
+                padding: 25px;
+            }
+
+            .mouthguard-container {
+                transform: scale(1) !important;
+            }
+
+            .mouthguard-btn {
+                width: 100%;
+                font-size: 14px;
+            }
+
+            .h2sportsguard {
+                font-size: 20px; 
+                margin-left: -5px;
+                width: 200px;
+            }
+
+            .price {
+                font-size: 14px; 
+                margin-left: 600px;
+            }
+
+             .discover_paragraph{
+                margin-left: 13px;
+                width: 210px;
+             }
+
+             .product-container{
+                font-size: 20px;
+		margin-left: 255px;
+                font-weight: bolder;
+            }			
+	    			
+	    .pcontainer{
+                margin-left: 240px;
+                width: 210px;
+            }
+	  
+
+            .inclusions{
+              margin-left: -125px;
+              font-weight: bold;
+            }
+					
+            .inclusions-container{
+                flex-direction: column;
+		margin-left: 520px;
+                width: 590px;
+
+           }
+
+           .inclusions_container{
+		margin-left: 660px;
+		width: 300px;
+           }
+
+            .carousel-container{
+                width: 100%;
+            }
+
+            .carousel-images{
+                margin-left: 15px;
+            }
+
+            .carousel-thumbnails{
+                width: 200px;
+            }
+
+            #guard_position{
+                width: 0px;
+                margin-left: -60px;
+            }
+
+            #openPopupBtn{
+                width: 280px;
+            }
+
+            .guard-btn{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 15px;
+            border: 1px solid #ddd;
+            background-color: #f9f9f9;
+            cursor: pointer;
+            margin-bottom: 10px;
+            transition: all 0.3s ease;
+            border-radius: 8px;
+            width: 170px;
+            margin-left: -70px;
+            }
+
+            .mouthguard-form-row{
+            flex-direction: column;
+            }
+
+            .mouthguard-step mouthguard-step-2{
+                padding: 25px;
+            }
+
+            .modal-content{
+            margin-left: -220px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="mouthguard-customizer" class="mouthguard-customizer">
+        <div class="mouthguard-container">
+            <!-- Step 1: Product Information -->
+            <div class="mouthguard-step mouthguard-step-1 active">
+                <div class="mouthguard-split-container">
+                    <div class="mouthguard-left-side">
+                        <!-- Carousel container -->
+                        <div class="carousel-container">
+                            <!-- Main images for the carousel -->
+                            <div class="carousel-images">
+                                <img src="https://www.cawthradental.com/wp-content/uploads/2020/05/sportsguard-sport-guard-mouth-guard-800x675.jpg" alt="Sports Mouthguard" class="carousel-image active">
+                                <img src="https://client.uponline.com/internal/images/SportsGuard.jpg" alt="Guard Position" class="carousel-image">
+                                <img src="https://www.onlinedegree.com/wp-content/uploads/2016/11/professional_athlete.jpg" alt="Customize Guard" class="carousel-image">
+                                <img src="https://www.cawthradental.com/wp-content/uploads/2020/05/sportsguard-sport-guard-mouth-guard-800x675.jpg" alt="Impression Kit" class="carousel-image">
+                                <img src="https://www.cawthradental.com/wp-content/uploads/2020/05/sportsguard-sport-guard-mouth-guard-800x675.jpg" alt="Step 5 Image" class="carousel-image">
+                            </div>
+
+                            <!-- Navigation arrows -->
+                            <span class="carousel-arrow left-arrow" onclick="moveCarousel(-1)">❮</span>
+                            <span class="carousel-arrow right-arrow" onclick="moveCarousel(1)">❯</span>
+
+                            <!-- Thumbnails for the carousel -->
+                            <div class="carousel-thumbnails">
+                                <img src="https://www.cawthradental.com/wp-content/uploads/2020/05/sportsguard-sport-guard-mouth-guard-800x675.jpg" alt="Sports Mouthguard Thumbnail" class="thumbnail active" onclick="showImage(0)">
+                                <img src="https://client.uponline.com/internal/images/SportsGuard.jpg" alt="Guard Position Thumbnail" class="thumbnail" onclick="showImage(1)">
+                                <img src="https://www.onlinedegree.com/wp-content/uploads/2016/11/professional_athlete.jpg" alt="Customize Guard Thumbnail" class="thumbnail" onclick="showImage(2)">
+                                <img src="https://www.cawthradental.com/wp-content/uploads/2020/05/sportsguard-sport-guard-mouth-guard-800x675.jpg" alt="Impression Kit Thumbnail" class="thumbnail" onclick="showImage(3)">
+                                <img src="https://www.cawthradental.com/wp-content/uploads/2020/05/sportsguard-sport-guard-mouth-guard-800x675.jpg" alt="Step 5 Thumbnail" class="thumbnail" onclick="showImage(4)">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mouthguard-right-side">
+                        <h2 class="h2sportsguard">Sports Mouthguard</h2>
+                        <p class="price">$195.00</p>
+                        <p class="discover_paragraph">Discover the ultimate custom-fit Sports Mouthguard, designed for unbeatable comfort and protection. Perfect for all sports activities, ensuring a secure fit and maximum safety. Buy now and elevate your game!</p>
+                        <div class="product-overview">
+                            <h4 class="product-container">Product Overview</h4>
+			     <p class="pcontainer">Smile Protection Made Simple. Introducing <strong> IMPACT </strong> Mouthguards</p>
+                            <div class="inclusions">
+                                <h3 class="inclusions_container">Inclusions:</h3>
+                                <div class="inclusions-container">
+                                    <div class="inclusion-item">
+                                        <img src="https://www.for.org/sites/default/files/styles/teaser_image_372_x_210/public/TG2_2260_thumb_Intraoral-imaging-and-Scanning_0.png?itok=4WgnTRDt" alt="Digital Scan icon">
+                                        <p>Digital Scan at Your Door</p>
+                                    </div>
+                                    <div class="inclusion-item">
+                                        <img src="mouthguard-icon.png" alt="High-quality Impact mouthguard icon">
+                                        <p>High-quality, IMPACT mouthguard</p>
+                                    </div>
+                                    <div class="inclusion-item">
+                                        <img src="carrying-case-icon.png" alt="Convenient carrying case icon">
+                                        <p>Convenient carrying case</p>
+                                    </div>
+                                    <div class="inclusion-item">
+                                        <img src="free-shipping-icon.png" alt="Free shipping icon">
+                                        <p>Free shipping within Canada</p>
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                        <button class="customize-btn" id="customizeButton">Customize Your Sportsguard</button>
+
+                        <!-- New Section: Features Icons -->
+                        <div class="mouthguard-features">
+                            <!-- <div class="mouthguard-feature-icon">
+                                <img src="https://example.com/icons/custom-fit.png" alt="Custom Fit">
+                                <p>Custom Fit</p>
+                            </div>
+                            <div class="mouthguard-feature-icon">
+                                <img src="https://example.com/icons/high-impact.png" alt="High Impact">
+                                <p>High Impact</p>
+                            </div>
+                            <div class="mouthguard-feature-icon">
+                                <img src="https://example.com/icons/bpa-free.png" alt="BPA Free">
+                                <p>BPA Free</p>
+                            </div> -->
+                        </div>
+
+                        <!-- New Section: Dynamic CTA Banner -->
+                        <div class="mouthguard-cta-banner" id="ctaBanner">
+                            Limited Time Offer: Customize Now & Save 20%!
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 2: Guard Position Selection and Details -->
+            <div class="mouthguard-step mouthguard-step-2">
+                <div class="mouthguard-split-container">
+                    <div class="mouthguard-left-side">
+                        <!-- Carousel container -->
+                        <div class="carousel-container">
+                            <!-- Main images for the carousel -->
+                            <div class="carousel-images">
+                                <img src="https://res.cloudinary.com/grand-canyon-university/image/fetch/w_750,h_564,c_fill,g_faces,q_auto/https://www.gcu.edu/sites/default/files/2020-12/GettyImages-738777325.jpg" alt="Sports Mouthguard" class="carousel-image active">
+                                <img src="https://client.uponline.com/internal/images/SportsGuard.jpg" alt="Guard Position" class="carousel-image">
+                                <img src="https://www.cawthradental.com/wp-content/uploads/2020/05/sportsguard-sport-guard-mouth-guard-800x675.jpg" alt="Customize Guard" class="carousel-image">
+                                <img src="https://www.cawthradental.com/wp-content/uploads/2020/05/sportsguard-sport-guard-mouth-guard-800x675.jpg" alt="Impression Kit" class="carousel-image">
+                                <img src="https://www.cawthradental.com/wp-content/uploads/2020/05/sportsguard-sport-guard-mouth-guard-800x675.jpg" alt="Step 5 Image" class="carousel-image">
+                            </div>
+
+                            <!-- Navigation arrows -->
+                            <span class="carousel-arrow left-arrow" onclick="moveCarousel(-1)">❮</span>
+                            <span class="carousel-arrow right-arrow" onclick="moveCarousel(1)">❯</span>
+
+                            <!-- Thumbnails for the carousel -->
+                            <div class="carousel-thumbnails">
+                                <img src="https://res.cloudinary.com/grand-canyon-university/image/fetch/w_750,h_564,c_fill,g_faces,q_auto/https://www.gcu.edu/sites/default/files/2020-12/GettyImages-738777325.jpg" alt="Sports Mouthguard Thumbnail" class="thumbnail active" onclick="showImage(0)">
+                                <img src="https://client.uponline.com/internal/images/SportsGuard.jpg" alt="Guard Position Thumbnail" class="thumbnail" onclick="showImage(1)">
+                                <img src="https://www.cawthradental.com/wp-content/uploads/2020/05/sportsguard-sport-guard-mouth-guard-800x675.jpg" alt="Customize Guard Thumbnail" class="thumbnail" onclick="showImage(2)">
+                                <img src="https://www.cawthradental.com/wp-content/uploads/2020/05/sportsguard-sport-guard-mouth-guard-800x675.jpg" alt="Impression Kit Thumbnail" class="thumbnail" onclick="showImage(3)">
+                                <img src="https://www.cawthradental.com/wp-content/uploads/2020/05/sportsguard-sport-guard-mouth-guard-800x675.jpg" alt="Step 5 Thumbnail" class="thumbnail" onclick="showImage(4)">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mouthguard-right-side">
+                        <h3>Guard Position</h3>
+<!--                         <span class="mouthguard-cancel-icon" id="exitButton">✕</span>
+                         <div id="guard_position">
+                            <div class="guard-btn">
+                                <input type="radio" id="upperGuard" name="guardPosition" value="Upper" required>
+                                <label for="upperGuard">Upper</label>
+                                <img src="https://example.com/upper-guard.png" alt="Upper Guard">
+                            </div>
+                            <div class="guard-btn">
+                                <input type="radio" id="lowerGuard" name="guardPosition" value="Lower">
+                                <label for="lowerGuard">Lower</label>
+                                <img src="https://example.com/lower-guard.png" alt="Lower Guard">
+                            </div>
+                            <span class="mouthguard-error" id="guard-position-error" style="display:none;">Guard Position is a required field</span>
+                        </div>
+                         -->
+                        
+
+                        <div class="mouthguard-form-row">
+                            <div class="mouthguard-form-group">
+                                <label for="game-name">Sport:</label>
+                                <select id="game-name" required>
+                                    <option value="" disabled selected>Select Sport</option>
+                                    <option value="boxing">Boxing</option>
+                                    <option value="martial-arts">Martial Arts (e.g., MMA, Karate, Taekwondo)</option>
+                                    <option value="football">Football (American)</option>
+                                    <option value="basketball">Basketball</option>
+                                    <option value="ice-hockey">Ice Hockey</option>
+                                    <option value="field-hockey">Field Hockey</option>
+                                    <option value="rugby">Rugby</option>
+                                    <option value="lacrosse">Lacrosse</option>
+                                    <option value="wrestling">Wrestling</option>
+                                    <option value="soccer">Soccer</option>
+                                    <option value="roller-derby">Roller Derby</option>
+                                </select>
+                                <span class="mouthguard-error" id="sport-error">Sport is a required field</span>
+                            </div>
+
+                            <div class="mouthguard-form-group">
+                                <label for="thickness">Thickness:</label>
+                                <select id="thickness" required>
+                                    <option value="" disabled selected>Select Thickness</option>
+                                    <option value="2mm">2mm</option>
+                                    <option value="3mm">3mm</option>
+                                    <option value="4mm">4mm</option>
+                                </select>   
+                            </div>
+                        </div>
+                        <button id="openPopupBtn">Recommendated thickness for Sports</button>
+                            <div id="thicknessModal" class="modal">
+                                <div class="modal-content">
+                                    <span class="close">×</span>
+                                    <div class="thickness-guide">
+                                        <h2>Thickness Guide</h2>
+                                        <div class="card">
+                                            <div class="image">
+                                                <img src="thin.png" alt="Thin">
+                                            </div>
+                                            <div class="content">
+                                                <h3>THIN</h3>
+                                                <p>2mm Thick: Face-Masked Sports</p>
+                                                <p>BMX, Cycling, Football, Ice Hockey (cage), Lacrosse (Men's), Motor Sports, Skiing/Snowboarding, Soccer</p>
+                                            </div>
+                                        </div>
+                                        <div class="card">
+                                            <div class="image">
+                                                <img src="standard.png" alt="Standard">
+                                            </div>
+                                            <div class="content">
+                                                <h3>STANDARD</h3>
+                                                <p>3mm Thick: Non-Striking Open-Face Sports</p>
+                                                <p>Baseball/Softball, Basketball, Brazilian Jiu-Jitsu, Field Hockey, Ice Hockey (visor/open face), Lacrosse (Women's), Roller Derby, Rugby</p>
+                                            </div>
+                                        </div>
+                                        <div class="card">
+                                            <div class="image">
+                                                <img src="heavy.png" alt="Heavy">
+                                            </div>
+                                            <div class="content">
+                                                <h3>HEAVY</h3>
+                                                <p>4mm Thick: Striking Open-Face Sports</p>
+                                                <p>Boxing, Kickboxing, Mixed Martial Arts, Muay Thai</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        <button class="mouthguard-btn" id="nextButtonStep2">Next</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 3: Customization Options -->
+            <div class="mouthguard-step mouthguard-step-3">
+                <div class="mouthguard-split-container">
+                    <div class="mouthguard-left-side">
+                        <!-- Carousel container -->
+                        <div class="carousel-container">
+                            <!-- Main images for the carousel -->
+                            <div class="carousel-images">
+                                <img src="https://www.cawthradental.com/wp-content/uploads/2020/05/sportsguard-sport-guard-mouth-guard-800x675.jpg" alt="Sports Mouthguard" class="carousel-image active">
+                                <img src="https://client.uponline.com/internal/images/SportsGuard.jpg" alt="Guard Position" class="carousel-image">
+                                <img src="https://www.cawthradental.com/wp-content/uploads/2020/05/sportsguard-sport-guard-mouth-guard-800x675.jpg" alt="Customize Guard" class="carousel-image">
+                                <img src="https://www.cawthradental.com/wp-content/uploads/2020/05/sportsguard-sport-guard-mouth-guard-800x675.jpg" alt="Impression Kit" class="carousel-image">
+                                <img src="https://www.cawthradental.com/wp-content/uploads/2020/05/sportsguard-sport-guard-mouth-guard-800x675.jpg" alt="Step 5 Image" class="carousel-image">
+                            </div>
+
+                            <!-- Navigation arrows -->
+                            <span class="carousel-arrow left-arrow" onclick="moveCarousel(-1)">❮</span>
+                            <span class="carousel-arrow right-arrow" onclick="moveCarousel(1)">❯</span>
+
+                            <!-- Thumbnails for the carousel -->
+                            <div class="carousel-thumbnails">
+                                <img src="https://www.cawthradental.com/wp-content/uploads/2020/05/sportsguard-sport-guard-mouth-guard-800x675.jpg" alt="Sports Mouthguard Thumbnail" class="thumbnail active" onclick="showImage(0)">
+                                <img src="https://client.uponline.com/internal/images/SportsGuard.jpg" alt="Guard Position Thumbnail" class="thumbnail" onclick="showImage(1)">
+                                <img src="https://www.cawthradental.com/wp-content/uploads/2020/05/sportsguard-sport-guard-mouth-guard-800x675.jpg" alt="Customize Guard Thumbnail" class="thumbnail" onclick="showImage(2)">
+                                <img src="https://www.cawthradental.com/wp-content/uploads/2020/05/sportsguard-sport-guard-mouth-guard-800x675.jpg" alt="Impression Kit Thumbnail" class="thumbnail" onclick="showImage(3)">
+                                <img src="https://www.cawthradental.com/wp-content/uploads/2020/05/sportsguard-sport-guard-mouth-guard-800x675.jpg" alt="Step 5 Thumbnail" class="thumbnail" onclick="showImage(4)">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mouthguard-right-side">
+                        <h3>Choose your Guard's color and set an initial to personalize it</h3>
+                        <span class="mouthguard-cancel-icon" id="exitButtonStep3">✕</span>
+                        <div class="mouthguard-form-row">
+                            <div class="mouthguard-form-group">
+                                <label for="color">Guard Color</label>
+                                <select id="color" required>
+                                    <option value="white">White</option>
+                                    <option value="black">black</option>
+                                </select>
+                            </div>
+
+                        </div>
+                        <div class="mouthguard-form-row">
+                            <div class="mouthguard-form-group">
+                                <label for="initials">Jersey Number or Initial</label>
+                                <input type="text" id="initials" class="jerseynumber" placeholder="Jersey Number or Initials" maxlength="3" required>
+                            </div>
+                        </div>
+                        <button class="mouthguard-btn" id="nextButtonStep3">Next</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 4: user name -->
+            <div class="mouthguard-step mouthguard-step-4">
+                <div class="mouthguard-split-container">
+                    <div class="mouthguard-left-side">
+                        <!-- Carousel container -->
+                        <div class="carousel-container">
+                            <!-- Main images for the carousel -->
+                            <div class="carousel-images">
+                                <img src="https://www.cawthradental.com/wp-content/uploads/2020/05/sportsguard-sport-guard-mouth-guard-800x675.jpg" alt="Sports Mouthguard" class="carousel-image active">
+                                <img src="https://client.uponline.com/internal/images/SportsGuard.jpg" alt="Guard Position" class="carousel-image">
+                                <img src="https://www.cawthradental.com/wp-content/uploads/2020/05/sportsguard-sport-guard-mouth-guard-800x675.jpg" alt="Customize Guard" class="carousel-image">
+                                <img src="https://www.cawthradental.com/wp-content/uploads/2020/05/sportsguard-sport-guard-mouth-guard-800x675.jpg" alt="Impression Kit" class="carousel-image">
+                                <img src="https://www.cawthradental.com/wp-content/uploads/2020/05/sportsguard-sport-guard-mouth-guard-800x675.jpg" alt="Step 5 Image" class="carousel-image">
+                            </div>
+
+                            <!-- Navigation arrows -->
+                            <span class="carousel-arrow left-arrow" onclick="moveCarousel(-1)">❮</span>
+                            <span class="carousel-arrow right-arrow" onclick="moveCarousel(1)">❯</span>
+
+                            <!-- Thumbnails for the carousel -->
+                            <div class="carousel-thumbnails">
+                                <img src="https://www.cawthradental.com/wp-content/uploads/2020/05/sportsguard-sport-guard-mouth-guard-800x675.jpg" alt="Sports Mouthguard Thumbnail" class="thumbnail active" onclick="showImage(0)">
+                                <img src="https://client.uponline.com/internal/images/SportsGuard.jpg" alt="Guard Position Thumbnail" class="thumbnail" onclick="showImage(1)">
+                                <img src="https://www.cawthradental.com/wp-content/uploads/2020/05/sportsguard-sport-guard-mouth-guard-800x675.jpg" alt="Customize Guard Thumbnail" class="thumbnail" onclick="showImage(2)">
+                                <img src="https://www.cawthradental.com/wp-content/uploads/2020/05/sportsguard-sport-guard-mouth-guard-800x675.jpg" alt="Impression Kit Thumbnail" class="thumbnail" onclick="showImage(3)">
+                                <img src="https://www.cawthradental.com/wp-content/uploads/2020/05/sportsguard-sport-guard-mouth-guard-800x675.jpg" alt="Step 5 Thumbnail" class="thumbnail" onclick="showImage(4)">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mouthguard-right-side">
+                        <h3>Please Enter your first and last name</h3>
+                        <span class="mouthguard-cancel-icon" id="exitButtonStep4">✕</span>
+                        <div class="mouthguard-form-row">
+                            <div class="mouthguard-form-group">
+                                <input type="text" id="firstName" placeholder="First Name" required>
+                            </div>
+                            <div class="mouthguard-form-group">
+                                <input type="text" id="lastName" placeholder="Last Name" required>
+                            </div>
+                             <div class="mouthguard-form-group">
+                                <input type="text" id="email" placeholder="Email Address" required>
+                            </div>
+                            <div class="mouthguard-form-group">
+                                <input type="text" id="phoneNumber" placeholder="Phone Number" required>
+                            </div>
+                        </div>
+                        <button class="mouthguard-btn" id="submitButton">Submit</button>
+                    </div>
+                </div>
+            </div>
+
+<!--                 Step 5: Review and Update Details -->
+<div class="mouthguard-step mouthguard-step-5">
+    <div class="mouthguard-split-container">
+        <div class="mouthguard-left-side">
+            <h3>Review and Update Your Details</h3>
+            <div class="mouthguard-form-group">
+                <label for="reviewGuardPosition">Guard Position</label>
+                <select id="reviewGuardPosition" required>
+                    <option value="upper">Upper</option>
+                    <option value="lower">Lower</option>
+                </select>
+            </div>
+
+            <div class="mouthguard-form-group">
+                <label for="reviewGameName">Sport</label>
+                <select id="reviewGameName" required>
+                    <option value="boxing">Boxing</option>
+                    <option value="martial-arts">Martial Arts (e.g., MMA, Karate, Taekwondo)</option>
+                    <option value="football">Football (American)</option>
+                    <option value="basketball">Basketball</option>
+                    <option value="ice-hockey">Ice Hockey</option>
+                    <option value="field-hockey">Field Hockey</option>
+                    <option value="rugby">Rugby</option>
+                    <option value="lacrosse">Lacrosse(Women's)</option>
+                    <option value="lacrosse">Lacrosse(men's)</option>
+                    <option value="wrestling">Wrestling</option>
+                    <option value="soccer">Soccer</option>
+                    <option value="roller-derby">Roller Derby</option>
+                    <option value="BMX">BMX</option>
+                    <option value="Cycling">Cycling</option>
+                    <option value="Motor Sports">Motor Sports</option>
+                    <option value="Skiing/Snowboarding">Skiing/Snowboarding</option>
+                    <option value="Baseball/Softball">Baseball/Softball</option>
+                </select>
+            </div>
+
+            <div class="mouthguard-form-group">
+                <label for="reviewThickness">Thickness</label>
+                <select id="reviewThickness" required>
+                    <option value="2mm">2mm</option>
+                    <option value="3mm">3mm</option>
+                    <option value="4mm">4mm</option>
+                </select>
+            </div>
+
+            <div class="mouthguard-form-group">
+                <label for="reviewColor">Guard Color</label>
+                <select id="reviewColor" required>
+                    <option value="white">White</option>
+                    <option value="black">Black</option>
+                </select>
+            </div>
+
+            <div class="mouthguard-form-group">
+                <label for="reviewInitials">Jersey Number or Initial</label>
+                <input type="text" id="reviewInitials" placeholder="Initials" maxlength="3" required>
+            </div>
+        </div>
+      
+        <div class="mouthguard-right-side">
+
+                <div class="mouthguard-form-group">
+                    <label for="reviewFirstName">First Name</label>
+                    <input type="text" id="reviewFirstName" placeholder="First Name" required>
+                </div>
+
+                <div class="mouthguard-form-group">
+                    <label for="reviewLastName">Last Name</label>
+                    <input type="text" id="reviewLastName" placeholder="Last Name" required>
+                </div>
+
+                <div class="mouthguard-form-group">
+                    <label for="reviewEmail">Email</label>
+                    <input type="text" id="reviewEmail" placeholder="Email" required>
+                </div>
+
+                <div class="mouthguard-form-group">
+                    <label for="reviewPhoneNumber">Phone Number</label>
+                    <input type="text" id="reviewPhoneNumber" placeholder="Phone Number" required>
+                </div>
+
+<!--                 <button class="mouthguard-btn" id="placeOrderButton">Confirm Your Order</button>
+ -->
+          <a href="https://impact-gard.com/product/sportsguard-2/" target="_blank">
+    <button class="mouthguard-btn" id="placeOrderButton">Confirm Your Order</button>
+</a>
+
+            </div>
+          
+        </div>
+    </div>
+
+          
+        </div>
+    </div>
+
+    <script>
+
+            var modal = document.getElementById("thicknessModal");
+
+            var btn = document.getElementById("openPopupBtn");
+
+            var span = document.getElementsByClassName("close")[0];
+
+            btn.onclick = function() {
+                modal.style.display = "block";
+            }
+
+            span.onclick = function() {
+                modal.style.display = "none";
+            }
+
+            window.onclick = function(event) {
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                }
+            }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            let currentImageIndex = 0;
+            const images = document.querySelectorAll('.carousel-image');
+            const thumbnails = document.querySelectorAll('.thumbnail');
+
+            function showImage(index) {
+                images.forEach((img, i) => {
+                    img.classList.remove('active');
+                    thumbnails[i].classList.remove('active');
+                    if (i === index) {
+                        img.classList.add('active');
+                        thumbnails[i].classList.add('active');
+                    }
+                });
+                currentImageIndex = index;
+            }
+        });
+
+            function moveCarousel(direction) {
+                images[currentImageIndex].classList.remove('active');
+                currentImageIndex += direction;
+                if (currentImageIndex < 0) {
+                    currentImageIndex = images.length - 1;
+                } else if (currentImageIndex >= images.length) {
+                    currentImageIndex = 0;
+                }
+                images[currentImageIndex].classList.add('active');
+            }
+        
+            document.querySelectorAll('.left-arrow').forEach(arrow => arrow.addEventListener('click', () => moveCarousel(-1)));
+            document.querySelectorAll('.right-arrow').forEach(arrow => arrow.addEventListener('click', () => moveCarousel(1)));
+
+            // thumbnails.forEach((thumbnail, index) => {
+            //     thumbnail.addEventListener('click', () => showImage(index));
+            // });
+
+            // showImage(0); // Initial display
+
+            document.getElementById('customizeButton').addEventListener('click', function () {
+                customizerEnterFullScreen();
+                customizerNextStep(2);
+            });
+
+            document.getElementById('ctaBanner').addEventListener('click', function () {
+                customizerEnterFullScreen();
+                customizerNextStep(2);
+            });
+
+            document.getElementById('nextButtonStep2').addEventListener('click', function () {
+                if (validateStep2()) {
+                    customizerNextStep(3);
+                }
+            });
+
+            document.getElementById('nextButtonStep3').addEventListener('click', function () {
+                if (validateStep3()) {
+                    customizerNextStep(4);
+                }
+            });
+
+            document.getElementById('submitButton').addEventListener('click', function () {
+                if (validateStep4()) {
+                    customizerNextStep(5);
+                }
+            });
+
+             document.getElementById('placeOrderButton').addEventListener('click', function () {
+                if (validateStep5()) {
+                    finalizeOrder();
+                }
+            });
+
+            document.querySelectorAll('.mouthguard-cancel-icon').forEach(function (button) {
+                button.addEventListener('click', customizerConfirmExit);
+            });
+
+            document.querySelectorAll('.guard-btn').forEach(button => {
+                button.addEventListener('click', function () {
+                    selectGuard(button.querySelector('span').innerText.toLowerCase());
+                });
+            });
+
+            function customizerNextStep(stepNumber) {
+                document.querySelectorAll('.mouthguard-step').forEach(step => step.classList.remove('active'));
+                document.querySelector(`.mouthguard-step-${stepNumber}`).classList.add('active');
+            }
+
+            function customizerEnterFullScreen() {
+                const container = document.querySelector('.mouthguard-container');
+                container.classList.add('fullscreen');
+            }
+
+            function customizerConfirmExit() {
+                if (confirm('Are you sure you want to exit?')) {
+                    customizerGoToFirstStep();
+                    customizerExitFullScreen();
+                }
+            }
+
+            function customizerGoToFirstStep() {
+                document.querySelectorAll('.mouthguard-step').forEach(step => step.classList.remove('active'));
+                document.querySelector('.mouthguard-step-1').classList.add('active');
+            }
+
+            function customizerExitFullScreen() {
+                const container = document.querySelector('.mouthguard-container');
+                container.classList.remove('fullscreen');
+            }
+
+            function selectGuard(position) {
+                document.querySelectorAll('.guard-btn').forEach(btn => btn.classList.remove('active'));
+                document.querySelectorAll('.guard-btn').forEach(btn => {
+                    if (btn.querySelector('span').innerText.toLowerCase() === position) {
+                        btn.classList.add('active');
+                    }
+                });
+            }
+
+            function validateStep2() {
+                let isValid = true;
+                const sport = document.getElementById('game-name');
+                if (sport.value === "") {
+                    isValid = false;
+                    document.getElementById('sport-error').style.display = 'block';
+                } else {
+                    document.getElementById('sport-error').style.display = 'none';
+                }
+
+                const thickness = document.getElementById('thickness');
+                if (thickness.value === "") {
+                    isValid = false;
+                }
+
+                return isValid;
+
+                const guardPosition = document.querySelector('.guard-btn.active');
+                if (!guardPosition) {
+                    isValid = false;
+                    document.getElementById('guard-position-error').style.display = 'block';  // Add an error display if guard position is required
+                } else {
+                    document.getElementById('guard-position-error').style.display = 'none';
+                }
+
+                return isValid;
+            }
+
+            function validateStep3() {
+                const color = document.getElementById('color').value;
+                const initials = document.getElementById('initials').value.trim();
+
+                if (color === "" || initials === "") {
+                    alert('Please select a color and enter your initials.');
+                    return false;
+                }
+                return true;
+            }
+
+            function validateStep4() {
+                const firstName = document.getElementById('firstName').value.trim();
+                const lastName = document.getElementById('lastName').value.trim();
+
+                if (firstName === "" || lastName === "") {
+                    alert('Please enter both first and last names.');
+                    return false;
+                }
+                return true;
+            }
+
+            // After submission, switch to Step 5
+          document.getElementById('submitButton').addEventListener('click', function () {
+              if (validateStep4()) {
+                customizerNextStep(5); // Go to Step 5 after successful form submission
+                populateReviewForm();  // Populate Step 5 form with the previously entered values
+              }
+          }); 
+
+      
+        // Function to populate Step 5 form with previously entered values
+        function populateReviewForm() {
+            // document.getElementById('reviewGuardPosition').value = document.querySelector('input[name="guardPosition"]:checked').value;
+            document.getElementById('reviewGameName').value = document.getElementById('game-name').value;
+            document.getElementById('reviewThickness').value = document.getElementById('thickness').value;
+            document.getElementById('reviewColor').value = document.getElementById('color').value;
+            document.getElementById('reviewInitials').value = document.getElementById('initials').value;
+            document.getElementById('reviewFirstName').value = document.getElementById('firstName').value;
+            document.getElementById('reviewLastName').value = document.getElementById('lastName').value;
+            document.getElementById('reviewEmail').value = document.getElementById('email').value;
+            document.getElementById('reviewPhoneNumber').value = document.getElementById('phoneNumber').value;
+        }
+        
+        // Handle final order submission
+        document.getElementById('placeOrderButton').addEventListener('click', function () {
+            if (populateReviewForm()) {
+                finalizeOrder();
+            }
+        });
+        
+        // Function to validate Step 5
+        function validateStep5() {
+            // Perform any additional validation if needed
+            return true;
+        }
+        
+        // Function to finalize and submit the order
+        function finalizeOrder() {
+            const formData = {
+                guardPosition: document.getElementById('reviewGuardPosition').value,
+                sport: document.getElementById('reviewGameName').value,
+                thickness: document.getElementById('reviewThickness').value,
+                color: document.getElementById('reviewColor').value,
+                initials: document.getElementById('reviewInitials').value,
+                firstName: document.getElementById('reviewFirstName').value,
+                lastName: document.getElementById('reviewLastName').value,
+                email: document.getElementById('reviewEmail').value,
+                phoneNumber: document.getElementById('reviewPhoneNumber').value,
+            };
+        
+            // Make final submission 
+            fetch('http://localhost:8089/mouthguards/add', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formData)
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log('Order placed:', data);
+                alert('Your order has been successfully Created!');
+            })
+            .catch(error => {
+                console.error('Error placing order:', error);
+                alert('There was an error placing your order. Please try again.');
+            });
+        }
+      
+    </script>
+</body>
+</html>

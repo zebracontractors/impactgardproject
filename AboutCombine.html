@@ -1,0 +1,1018 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="ImpactGard is dedicated to protecting athletes and enhancing performance with high-quality, customizable mouthguards crafted by a dentist, dental lab owner, and coach.">
+    <title>About Us | ImpactGard</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+/*             background-color: white;
+            */
+        }
+
+            .about-us-section {
+            display: flex;
+            background-color: white;
+            padding: 40px;
+            /* box-shadow: 0px 4px 8px rgb(0, 0, 0); */
+            position: relative;
+            width: 1200px;
+            padding-top: 200px;
+			margin-left: 50px;			
+        }
+
+        .image-container {
+            background-color: white;
+            padding: 10px;
+            flex: 1;
+            margin-right: 80px;
+            box-shadow: 
+        -5px -5px 10px rgba(0, 0, 0, 0.903),  
+        5px 5px 10px rgba(255, 255, 255, 0.5);    
+            margin-top: -120px;
+            width: 250px; 
+            height: 450px; 
+            margin-left: 120px;
+        }
+
+        .image-container img {
+            width: 70%;
+            height: auto;
+            border-radius: 5px;
+        }
+
+        .content-container {
+            background-color: white;
+            padding: 40px;
+            flex: 1;
+            /* box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); */
+            box-shadow: 
+        -5px -5px 10px rgba(255, 255, 255, 0.5),  
+        5px 5px 10px rgba(0, 0, 0, 0.903);   
+            width: 250px; 
+            height: 450px; 
+
+        }
+
+        .content-container h3 {
+            font-size: 20px;
+            color: black;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+
+        .content-container h1 {
+            font-size: 56px;
+            font-weight: 400;
+            color: black;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+
+        .content-container p {
+            font-size: 18px;
+            color: black;
+            line-height: 1.8;
+            margin-top: 20px;
+        }
+
+
+        /* Mission Section */
+
+        .mission-section {
+            padding-top: 10px;
+            max-width: 1200px;
+            display: grid;
+            grid-template-columns: 0.5fr 0.5fr;
+            /* grid-template-rows: auto auto; */
+            /* gap: 0.5rem; */
+            margin-left: 140px;
+            padding: -120px;
+         }
+
+        .mission-text {
+            grid-column: 1 / 2;
+            grid-row: 1 / 2;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            margin-left: 10px;
+            
+        }
+
+        .mission-text h1 {
+            font-size: 3rem;
+            margin-bottom: 50px;
+            margin-top: -150px;
+            font-size: 70px;
+            font-weight: 400;
+        }
+
+        .mission-text p {
+            font-size: 20px;
+            line-height: 1.6;
+            color: #333;
+
+            
+        }
+
+        .mission-image-1 {
+            grid-column: 2 / 3;
+            grid-row: 1 / 2;
+            /* border: 1px solid black; */
+            width: 530px;
+            height: 550px;
+            margin-left: 100px;
+            margin-top: 160px;
+        }
+
+        .mission-image-2 {
+            grid-column: 1 / 2;
+            grid-row: 2 / 3;
+            /* border: 1px solid black; */
+            width: 530px;
+            height: 550px;
+            margin-left: 10px;
+            margin-top: -120px;
+
+        }
+
+        .mission-image-3 {
+            grid-column: 2 / 3;
+            grid-row: 2 / 3;
+            /* border: 1px solid black; */
+            width: 530px;
+            height: 550px;
+            margin-left: 100px;
+            margin-top: 40px;
+        }
+
+        img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin-right: 200px;
+            
+        }
+
+        .mission-images img {
+            transition: transform 0.3s ease;
+        }
+
+        .mission-images img:hover {
+            transform: scale(1.05);
+        }
+
+        /* Team Section */
+        .team-section {
+            text-align: center;
+            margin-top: 20px;
+            /* background-color: white; */
+            color: black;
+            padding-bottom: 90px;
+            padding-top: 20px;  
+            width: 1200px;  
+            margin-left: 150px;        
+        }
+
+        .team-intro{
+            font-size:24px;
+            font-weight: bold;
+            margin-top: 100px;
+        }
+
+         h1 {
+            /* margin-bottom: 30px; */
+            color: black;
+            font-size: 70px;
+            font-weight: 400;
+            margin-top: -40px;
+            margin-bottom: 100px;
+        }
+
+        .team-container {
+            display: flex;
+            justify-content: center;
+            gap: 200px;
+            flex-wrap: wrap;
+        }
+
+        .team-member {
+            text-align: center;
+            cursor: pointer;
+            width: 150px;
+        }
+
+        .member-image {
+            width: 320px;
+            height: 310px;
+            border-radius: 5%;
+            background-size: cover;
+            background-position: center;
+            margin-bottom: 10px;
+            border: 2px solid black;
+            transition: transform 0.3s ease;
+            margin-left: -90px;
+        }
+
+        .team-member:hover .member-image {
+            transform: scale(1.1);
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 60%;
+            color: #000;
+            border-radius: 10px;
+            position: relative;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            position: absolute;
+            right: 20px;
+            top: 10px;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        /* Product Section */
+
+        .product-section{
+            padding-bottom: 40px;
+            /* width: 1100px; */
+        }
+        
+        .product-container {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            max-width: 1200px;
+            height: 80vh;
+            padding: -200px;
+            margin-left:150px;
+            box-shadow: 
+        -5px -5px 10px rgba(255, 255, 255, 0.5),  
+        5px 5px 10px rgba(0, 0, 0, 0.903);  
+           
+        }
+
+        .content {
+            display: flex;
+            height: 70%;
+        }
+
+        .text-section {
+            width: 70%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 20px;
+            box-sizing: border-box;
+            margin-top: 500px;
+            margin-bottom: 130px;
+            margin-left: 60px;
+        }
+        
+
+        .image-section{
+            width: 80%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 40px;
+            box-sizing: border-box;
+            margin-top: -120px;
+            margin-right: 80px;
+
+        }
+
+
+        .text-section p {
+            font-size: 20px;
+            line-height: 1.5;
+            color: #000000;
+            left: -20px;
+            margin-bottom: 160px;
+            margin-top: 120px;
+            margin-left: -160px;
+            text-align: center;
+             /* Initial state for animation */
+             opacity: 0;
+            transform: translateY(50px);
+            animation: slide-up 0.5s ease-out forwards;
+        }
+
+        @keyframes slide-up {
+            0% {
+                opacity: 0;
+                transform: translateY(120px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .text-section em {
+            font-style: italic;
+        }
+
+        .title-text{
+            font-size: 20px;
+            line-height: 1.5;
+            color: #000000;
+            margin-bottom: -40px;
+        }
+
+        
+
+        .image-section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* margin-top: -310px; */
+        }
+
+        .image-section img {
+            max-width: 160%;
+            max-height: 220%;
+            border-radius: 8px;
+            margin-top: 270px;
+            margin-right: -365px;
+            transition: transform 0.8s ease;
+            filter: blur(1px); 
+
+        }
+
+        #main-title{
+            margin-top: 40px;
+            margin-right: -200px;
+            margin-left: -20px;
+            margin-top: 90px;
+
+        }
+
+        #main-text{
+            margin-top:-320px;
+            margin-bottom: 240px;
+        }
+
+        .navigation {
+            position: absolute;
+            left: -20px;
+            display: flex;
+            justify-content: flex-start;
+            gap: 155px;
+            margin-bottom: -480px;
+            margin-top: -560px;
+            margin-left: 200px;
+        }
+
+        .nav-item {
+            font-size: 60px;
+            cursor: pointer;
+            color: #000000;
+            transition: color 0.5s;
+
+        }
+
+        .nav-item:hover, .active {
+            color: #00000048;
+            font-weight: bolder;
+        }
+
+			 @media (max-width: 1024px) {
+            .about-us-section {
+                flex-direction: column;
+            }
+
+            .image-container{
+                margin-left:40px;
+                padding: 20px;
+                width: 60%;
+                margin-top: 450px;
+							  
+            }
+            .content-container {
+                margin-left: 40px;
+                padding: 20px;
+                width: 60%;
+                margin-top:-1100px;
+            }
+
+            .mission-section {
+                flex-direction: column;
+							  margin-left: 20px;
+							  width: 60%;
+                /* grid-template-columns: 1fr;
+                grid-column: auto; */
+            }
+
+            .mission-text{
+                grid-column: 1;
+                margin-left: 60px;
+                margin-right: -340px;
+                margin-top: 280px;
+                
+            }
+				 
+				 .mission-text h1{
+					 margin-left: 40px;
+					 margin-top: -80px;
+				 }
+
+            .mission-text p{
+                flex-direction: column;
+                margin-top: 20px;
+							  margin-left: 40px;
+							  width: 80%;
+                margin-bottom: -100px;
+            }
+
+            .mission-image-1{
+                flex-direction: column;
+                margin-top: 1500px;
+                margin-left: -370px;
+
+            }
+
+            .mission-image-2{
+                flex-direction: column;
+                margin-top:30px;
+                margin-left: 110px;
+            }
+
+            .mission-image-3{
+                flex-direction: column;
+                margin-top: 580px;
+                margin-left: -370px;
+            }
+
+            .team-container {
+                flex-direction: column;
+                margin-left: 80px;
+            }
+
+            .team-section h1{
+                margin-left: -95px;
+            }
+
+            .team-member p{
+                margin-right: -400px;       
+                 }
+
+            .member-image{
+                width: 350%;
+                height: 550px;
+							  margin-left: 40px;
+            }
+
+            .product-container {
+                flex-direction: column;
+                margin-left: 380px;
+                height: 500px;
+            }
+
+            .text-section p{
+                margin-left: 40px;
+                width: 450px;
+                margin-right:40px;
+                margin-bottom: 2520px;
+                /* border:1px solid black; */
+            }
+
+            .image-section{
+                margin-top: 1200px;
+                margin-bottom: -1400px;
+                margin-right: -420px;
+                width: 3000px;
+                height: 400px;
+                /* border: 1px solid black; */
+            }
+
+            .image-section img{
+                margin-top: -400px;
+                margin-bottom: 300px;
+                margin-right: 580px;
+                margin-left: -295px;
+                width: 550px;
+                height: 600px;
+                /* border: 1px solid black; */
+            }
+
+            /* .image-section p{
+                text-align: center;
+                margin-right: 120px;
+                margin-left: 1020px;
+                margin-top: 1200px;
+                margin-bottom: -400px;
+                border: 1px solid black;
+            } */
+
+            .title-text{
+                margin-left: -1090px;
+                margin-top: -320px;
+                padding-bottom: 200px;
+            }
+
+            .navigation{
+                margin-bottom: -920px;
+                margin-left: 450px;
+            }
+
+            
+        }
+
+   
+        @media (max-width: 768px) {
+            .about-us-section {
+                flex-direction: column;
+            }
+
+            .image-container{
+                margin-left: -40px;
+                padding: 20px;
+                width: 60%;
+                margin-top: 500px;
+            }
+            .content-container {
+                margin-left: -40px;
+                padding: 20px;
+                width: 60%;
+                margin-top:-1200px;
+            }
+
+            .mission-section {
+                flex-direction: column;
+                /* grid-template-columns: 1fr;
+                grid-column: auto; */
+            }
+
+            .mission-text{
+                grid-column: 1;
+                margin-left: 120px;
+                margin-right: -340px;
+                margin-top: 280px;
+                
+            }
+
+            .mission-text p{
+                flex-direction: column;
+                margin-top: 20px;
+                margin-bottom: -100px;
+            }
+
+            .mission-image-1{
+                flex-direction: column;
+                margin-top: 1500px;
+                margin-left: -270px;
+
+            }
+
+            .mission-image-2{
+                flex-direction: column;
+                margin-top:30px;
+                margin-left: 160px;
+            }
+
+            .mission-image-3{
+                flex-direction: column;
+                margin-top: 580px;
+                margin-left: -270px;
+            }
+
+            .team-container {
+                flex-direction: column;
+                margin-left: 380px;
+            }
+
+            .team-section h1{
+                margin-left: -75px;
+            }
+
+            .team-member p{
+                margin-right: -200px;       
+                 }
+
+            .member-image{
+                width: 350%;
+                height: 550px;
+            }
+
+            .product-container {
+                flex-direction: column;
+                margin-left: 380px;
+                height: 500px;
+            }
+
+            .text-section p{
+                margin-left: 40px;
+                width: 450px;
+                margin-right:40px;
+                margin-bottom: 2520px;
+                /* border:1px solid black; */
+            }
+
+            .image-section{
+                margin-top: 1200px;
+                margin-bottom: -1400px;
+                margin-right: -320px;
+                width: 3000px;
+                height: 400px;
+                /* border: 1px solid black; */
+            }
+
+            .image-section img{
+                margin-top: -400px;
+                margin-bottom: 300px;
+                margin-right: 580px;
+                margin-left: -295px;
+                width: 550px;
+                height: 600px;
+                /* border: 1px solid black; */
+            }
+
+            /* .image-section p{
+                text-align: center;
+                margin-right: 120px;
+                margin-left: 1020px;
+                margin-top: 1200px;
+                margin-bottom: -400px;
+                border: 1px solid black;
+            } */
+
+            .title-text{
+                margin-left: -1090px;
+                margin-top: -320px;
+                padding-bottom: 200px;
+            }
+
+            .navigation{
+                margin-bottom: -920px;
+                margin-left: 450px;
+            }
+
+            
+        }
+
+        @media (max-width: 480px) {
+            .about-us-section {
+                flex-direction: column;
+            }
+
+            .image-container{
+                margin-left: -40px;
+                padding: 20px;
+                width: 60%;
+                margin-top: 500px;
+            }
+            .content-container {
+                margin-left: -40px;
+                padding: 20px;
+                width: 60%;
+                margin-top:-1200px;
+            }
+
+            .mission-section {
+                flex-direction: column;
+                /* grid-template-columns: 1fr;
+                grid-column: auto; */
+            }
+
+            .mission-text{
+                grid-column: 1;
+                margin-left: 50px;
+                margin-right: -340px;
+                margin-top: 280px;
+                
+            }
+
+            .mission-text p{
+                flex-direction: column;
+                margin-top: 20px;
+                margin-bottom: -100px;
+            }
+
+            .mission-image-1{
+                flex-direction: column;
+                margin-top: 1500px;
+                margin-left: -340px;
+
+            }
+
+            .mission-image-2{
+                flex-direction: column;
+                margin-top:30px;
+                margin-left: 160px;
+            }
+
+            .mission-image-3{
+                flex-direction: column;
+                margin-top: 580px;
+                margin-left: -340px;
+            }
+
+            .team-container {
+                flex-direction: column;
+                margin-left: 350px;
+            }
+
+            .team-section h1{
+                margin-left: -130px;
+            }
+
+            .team-section h2{
+                margin-left:-160px;
+            }
+
+            .team-member p{
+                margin-right: -200px;       
+                 }
+
+            .member-image{
+                width: 350%;
+                height: 550px;
+            }
+
+            .product-container {
+                flex-direction: column;
+                margin-left: 320px;
+                height: 500px;
+                width: 700px;
+            }
+
+            .text-section p{
+                margin-left: 40px;
+                width: 450px;
+                margin-right:40px;
+                margin-bottom: 2520px;
+                /* border:1px solid black; */
+            }
+
+            .image-section{
+                margin-top: 1200px;
+                margin-bottom: -1400px;
+                margin-right: -320px;
+                width: 3000px;
+                height: 400px;
+                /* border: 1px solid black; */
+            }
+
+            .image-section img{
+                margin-top: -400px;
+                margin-bottom: 300px;
+                margin-right: 580px;
+                margin-left: -295px;
+                width: 550px;
+                height: 600px;
+                /* border: 1px solid black; */
+            }
+
+            /* .image-section p{
+                text-align: center;
+                margin-right: 120px;
+                margin-left: 1020px;
+                margin-top: 1200px;
+                margin-bottom: -400px;
+                border: 1px solid black;
+            } */
+
+            .title-text{
+                margin-left: -1070px;
+                margin-top: -320px;
+                padding-bottom: 200px;
+            }
+
+            .navigation{
+                margin-bottom: -920px;
+                margin-left: 400px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Background Section -->
+    <div class="background-container">
+        <div class="about-us-section">
+            <div class="image-container">
+                <img src="https://res.cloudinary.com/hnpb47ejt/image/upload/c_fill,f_auto,h_240,q_auto,w_240/v1687106237/qhhs5c8ldrcidaliednr.jpg" alt="Product-image">
+            </div>
+            <div class="content-container">
+                <h3>Elevating Athlete Protection and Performance</h3>
+                <h1>About Us</h1>
+                <p>
+                    At ImpactGard, we are just getting started on a mission to protect athletes and enhance their performance. Founded by a dentist, dental lab owner, and coach with a passion for sports, ImpactGard is focused on creating high-quality, customizable mouthguards. Drawing from expertise in dentistry, lab craftsmanship, and sports, we aim to provide athletes with the ultimate protection and comfort. Though we’re new, our commitment to safety and performance is at the core of everything we do.
+                </p>
+                <!-- <button class="learn-more-btn">Learn More</button> -->
+            </div>
+        </div>
+    </div>
+    
+
+    <!-- Mission-Section -->
+
+    <div class="mission-section">
+        <!-- Text content on the left side -->
+        <div class="mission-text">
+            <h1>Our Mission</h1>
+            <p>
+                Our mission is to redefine athlete protection through cutting-edge technology.
+                We leverage advanced 3D scanning and 3D technology to create mouthguards that offer 
+                a custom-fit and unparalleled comfort. By integrating precision craftsmanship 
+                with innovative tech, we ensure every athlete receives a mouthguard that is perfectly tailored 
+                to their unique needs. Our goal is to enhance performance and safety, empowering athletes 
+                to compete with confidence and reach their full potential.
+            </p>
+        </div>
+
+        <!-- First image on the right side of the text -->
+        <div class="mission-image-1">
+            <img src="https://media.glamour.com/photos/5e826b8c259e2e0008c4082d/master/w_1600%2Cc_limit/Allyson%2520Felix_GettyImages-831119212.jpg" alt="Image 1">
+        </div>
+
+        <!-- Two more images below the text and the first image -->
+        <div class="mission-image-2">
+            <img src="https://www.specialolympics.ca/sites/default/files/styles/420_x_460/public/2017-01/14622514626_2506c35be0_o.jpg?itok=CMlzd2w9" alt="Image 2">
+        </div>
+
+        <div class="mission-image-3">
+            <img src="https://assets.aws.worldathletics.org/640dff964e13bf6a9fb3ca96.jpg" alt="Image 3">
+        </div>
+    </div>
+
+    <!-- Team Section -->
+    <div class="team-section">
+        <h1>Meet the team</h1>
+        <div class="team-container">
+            <div class="team-member" onclick="showBio('ana')">
+                <div class="member-image" style="background-image: url('ana.jpg');"></div>
+                <p>Ana Bogdanovic</p>
+            </div>
+            <div class="team-member" onclick="showBio('thomas')">
+                <div class="member-image" style="background-image: url('thomas.jpg');"></div>
+                <p>Dr. Thomas Minkov</p>
+            </div>
+            <div class="team-member" onclick="showBio('zack')">
+                <div class="member-image" style="background-image: url('zack.jpg');"></div>
+                <p>Zack Wilson</p>
+            </div>
+            <div class="team-member" onclick="showBio('keral')">
+                <div class="member-image" style="background-image: url('');"></div>
+                <p>Keral Patel</p>
+            </div>
+        </div>
+        <div>
+            <h2 class="team-intro">
+                "Our team combines dental knowledge and coaching experience to make <br>the best guards for your protection and performance."
+            </h2>
+        </div>
+    </div>
+
+    <!-- Popup Modal -->
+    <div id="bio-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeBio()">×</span>
+            <p id="bio-text"></p>
+        </div>
+    </div>
+
+    <!-- Product Section -->
+     <div class="product-section">
+    <div class="product-container">
+        <!-- Main content area: text and image side by side -->
+
+        <div class="content">
+            <!-- Text Section (Left) -->
+            <div class="text-section">
+                <p id="main-text">Navigate through our product offerings to find the perfect custom mouthguard for your needs. Discover how each option provides tailored protection and comfort.</p>
+                <!-- Navigation at the bottom left -->
+                 
+                <div class="navigation">
+                    <span class="nav-item" onclick="changeContent(1)">1</span>
+                    <span class="nav-item" onclick="changeContent(2)">2</span>
+                    <span class="nav-item" onclick="changeContent(3)">3</span>
+                    <span class="nav-item" onclick="changeContent(4)">4</span>
+                </div>
+            </div>
+
+            <!-- Image Section (Right) -->
+            <div class="image-section">
+                <img id="main-image" class="rotate" src="https://www.atlasdental.ca/wp-content/uploads/2023/08/sports-mouth-guard.jpg" alt="Mouthguards">
+
+                <div class="title-text">
+                    <p id="main-title">"Custom protection, perfect fit."</p>
+                </div>
+            </div>
+           
+        </div>
+    </div>
+</div>
+
+    <script>
+
+        document.addEventListener("DOMContentLoaded", () => {
+            const images = document.querySelectorAll('.mission-section img');
+
+            images.forEach((image) => {
+                image.addEventListener('mouseenter', () => {
+                    image.style.transform = 'scale(1.05)';
+                    image.style.transition = 'transform 0.3s ease';
+                });
+
+                image.addEventListener('mouseleave', () => {
+                    image.style.transform = 'scale(1)';
+                });
+            });
+        });
+
+        // Team
+        const bioContent = {
+            ana: "",
+            thomas: "Dr. Thomas Minkov is a seasoned professional with over 9 years of experience in dentistry. Specializing in sports dentistry, Dr. Minkov has dedicated his career to ensuring athletes receive the highest standard of dental care. With advanced training and certifications in sports dentistry, he is uniquely qualified to address the specific needs of athletes, from preventing dental injuries to optimizing oral health for peak performance. Dr. Thomas Minkov completed his Bachelor of Medical Sciences at Western University, and his Bachelor of Dental Surgery at University College Cork, in Ireland. Dr. Minkov uniquely has over 5 years of clinical experience managing dental emergencies from sports-related traumatic injury, which catalyzed his passion for the prevention of facial and dental trauma from sports-related injury, especially in young individuals. After seeing and treating so many adverse dental outcomes from sports injury, Dr. Minkov is keen on preventing injuries, so sports can remain fun and safe.",
+            zack: "",
+            keral: ""
+        };
+
+        function showBio(member) {
+            document.getElementById("bio-text").innerText = bioContent[member];
+            document.getElementById("bio-modal").style.display = "block";
+        }
+
+        function closeBio() {
+            document.getElementById("bio-modal").style.display = "none";
+        }
+
+        const content = [
+            {
+                text: "Our custom-made sportsguard offers superior protection for athletes during high-impact sports. Designed for a perfect fit, it shields your teeth from injuries while allowing optimal breathing and comfort. Crafted from durable materials, this sports mouthguard is ideal for both professional and amateur athletes. Invest in your safety today with a sportsguard that combines performance with peace of mind.",
+                image: "https://westvillagedental.ca/wp-content/uploads/2021/01/dentist-sportsguard-mouthguard-toronto.jpg",
+                title: "Maximum Protection for Athletes"
+            },
+            {
+                text: "Say goodbye to teeth grinding and clenching with our custom nightguard, designed for ultimate comfort during sleep. It fits securely to protect your teeth from wear and reduce jaw pain caused by bruxism. Made from soft yet durable material, this nightguard promotes restful sleep without discomfort. Preserve your dental health with a solution that works while you rest.",
+                image: "https://cdn-gcodp.nitrocdn.com/WZDgaoFqTbBXiyQhrxGtUElXYAHvKvab/assets/images/optimized/rev-81d8cbc/wp-content/uploads/2022/05/night-guards.jpg",
+                title: "Comfortable Protection for Teeth Grinding"
+            },
+            {
+                text: "Our custom dayguard offers discreet protection against daytime teeth clenching and jaw tension. Thin, comfortable, and virtually invisible, it is perfect for use during work or daily activities. This dayguard prevents wear on your teeth while allowing you to speak and breathe easily. Stay productive while protecting your smile with a guard designed for day-long comfort.",
+                image: "https://smileperfected.com/wp-content/uploads/2020/02/Lower-Day-Grind-Guard-300x236.png.webp",
+                title: "Discreet Protection for Daily Clenching"
+            },
+            {
+                text: "TALA: A taste of simplicity, everywhere you go.",
+                image: "https://your-image-source.com/image4.jpg",
+                title: ""
+            }
+        ];
+ 
+
+        function changeContent(index) {
+            let mainText = document.getElementById("main-text");
+            
+            mainText.innerHTML = content[index - 1].text;
+            document.getElementById("main-image").src = content[index - 1].image;
+            document.getElementById("main-title").innerHTML = content[index - 1].title;
+
+            // Trigger re-animation for the paragraph
+            mainText.style.animation = 'none'; // Reset animation
+            void mainText.offsetWidth; // Trigger reflow to restart animation
+            mainText.style.animation = 'slide-up 0.5s ease-out forwards';
+
+            let navItems = document.querySelectorAll('.nav-item');
+            navItems.forEach(item => item.classList.remove('active'));
+            navItems[index - 1].classList.add('active');
+        }
+    </script>
+</body>
+
+</html>

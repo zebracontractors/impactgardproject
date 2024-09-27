@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dental Lab Technologies and Workflow</title>
+    <style>
+        /* Global Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        /* Section 1: Dental Lab Technologies */
+        .technologies-section {
+            background-color: white;
+            padding: 20px;
+        }
+
+        .technologies {
+            display: flex;
+            flex-direction: column; /* Stack the items in a column */
+            gap: 20px;
+            padding: 20px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .tech-item {
+            text-align: center;
+            padding: 20px;
+            border-radius: 15px;
+            transition: transform 0.3s;
+            background-color: #fff;
+            width: 700px; /* Set a fixed width for the boxes */
+        }
+
+        .left-align {
+            align-self: flex-start; /* Align the box to the left */
+        }
+
+        .right-align {
+            align-self: flex-end; /* Align the box to the right */
+        }
+
+        .tech-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .tech-item img {
+            width: 60px;
+            margin-bottom: 15px;
+        }
+
+        .tech-item h2 {
+            font-size: 2.5em;
+            color: #333;
+            margin: 10px 0;
+        }
+
+        .tech-item p {
+            font-size: 1em;
+            color: #666;
+        }
+
+        /* Section 2: Workflow Steps */
+        .workflow-section {
+            background-color: #222;
+            color: #fff;
+            padding: 40px 0;
+        }
+
+        .container {
+            width: 95%;
+            margin: auto;
+            display: flex;
+            flex-direction: column; /* Stack each step vertically */
+            gap: 40px; /* Adds spacing between each step */
+        }
+
+        .h2test {
+            width: 900px; /* Example width */
+            margin: 0 auto;
+            margin-top: 60px;
+            margin-bottom: 60px;
+			/* margin-left: 340px; */
+            text-align: center;
+        }
+
+
+        .step {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            gap: 20px; /* Adds spacing between the text and image */
+            transition: transform 0.3s ease;
+        }
+
+        .step:hover {
+            transform: scale(1.03);
+        }
+
+        .image {
+            flex: 1;
+        }
+
+        .image img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            transition: transform 0.8s ease;
+        }
+
+        .text {
+            flex: 1;
+            padding: 20px;
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+        }
+
+        .text h2 {
+            color:white;
+            margin-bottom: 10px;
+        }
+
+        .text p {
+            line-height: 1.6;
+        }
+
+        @media(max-width:1024px){
+            .h2test{
+                margin-left: -270px;
+                margin-right: 10px;
+                font-size: 1.5em;
+            }
+        }
+
+
+        @media (max-width: 768px) {
+            .tech-item {
+                width: 100%; /* Full width on smaller screens */
+                align-self: center; /* Center-align on smaller screens */
+            }
+            .step {
+                flex-direction: column; /* Stack text and image vertically on smaller screens */
+                text-align: center; /* Center text for better appearance */
+            }
+
+            .text, .image {
+                width: 100%; /* Full width on smaller screens */
+            }
+
+            /* .h2test{
+                margin-left: 80px;
+            } */
+
+            .h2test {
+                margin-left: -270px;
+                margin-right: 10px;
+                font-size: 1.5em;
+            }
+
+            /* Add padding for better spacing on mobile */
+            .technologies-section, .workflow-section {
+                padding: 10px;
+            }
+
+            /* Improve spacing between items */
+            .tech-item {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Section 1: Dental Lab Technologies -->
+    <div class="technologies-section">
+        <div class="technologies">
+            <div class="tech-item left-align">
+                <img src="https://www.clearsmilesorthodontics.com.au/wp-content/uploads/2020/11/Itero-Icon.png" alt="iTero-Scanner">
+                <h4>iTero-Scanner</h4>
+                <p>iTero scanner is used for precise, high-definition digital scans of the mouth.</p>
+            </div>
+            <div class="tech-item right-align">
+                <img src="https://cdn-icons-png.flaticon.com/512/5332/5332333.png" alt="Cad-Cam Design">
+                <h4>Cad-Cam Design</h4>
+                <p>From digital scans to final placement, our CAD/CAM technology transforms your smile with seamless precision.</p>
+            </div>
+            <div class="tech-item left-align">
+                <img src="https://cdn.shopify.com/s/files/1/0276/4174/1415/files/V4_Products.png?v=1697788216" alt="3D Print">
+                <h4>3D Print</h4>
+                <p>Experience the future of dentistry with custom 3D print models, designed for perfect fit and function.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Section 2: Workflow Steps -->
+    <div class="workflow-section">
+        <div class="container">
+            <h3 class="h2test">"From Scan to Guard:<br> Made Just for You."</h3>
+
+            <!-- Step 1 -->
+            <div class="step">
+                <div class="image">
+                    <img src="https://media.3shape.com.imgeng.in/-/media/corporate/seo-articles/intraoral-scanners/trios-5lifestyle-photohand-holding-t5-with-sleeve-2-green8640x57602022.jpg?h=5760&iar=0&w=8640&v=f4e79974-d3f6-4ff7-a929-1c47c9f8b100&hash=A7A472510FFCE3A043AA2434365EBC9E" alt="Digital Scan">
+                </div>
+                <div class="text">
+                    <h4>Step 1: Digital Scan</h4>
+                    <p>We take a detailed digital scan of your teeth and mouth to ensure a precise, custom-fit mouthguard that offers maximum comfort and protection.</p>
+                </div>
+            </div>
+
+            <!-- Step 2 -->
+            <div class="step">
+                <div class="text">
+                    <h4>Step 2: Digital Design</h4>
+                    <p>Our experts design the mouthguard based on your scan, adjusting thickness and material to meet your specific needs.</p>
+                </div>
+                <div class="image">
+                    <img src="https://penntoday.upenn.edu/sites/default/files/2020-11/P-100869-Master-V1-006X.jpg" alt="Digital Design">
+                </div>
+            </div>
+
+            <!-- Step 3 -->
+            <div class="step">
+                <div class="image">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVB0kRrhZRKZjC9e3SvIyYroqI4iaUNbUtFm_yNusHos2jhEwPl_DJzk6TyfAC7wWFuLk&usqp=CAU" alt="Model Print">
+                </div>
+                <div class="text">
+                    <h4>Step 3: Model Print</h4>
+                    <p>An accurate mold is created using advanced 3D printing technology, ensuring a perfect fit.</p>
+                </div>
+            </div>
+
+            <!-- Step 4 -->
+            <div class="step">
+                <div class="text">
+                    <h4>Step 4: Product Ready</h4>
+                    <p>The final product is prepared, ensuring it meets all quality standards before it is sent to you.</p>
+                </div>
+                <div class="image">
+                    <img src="https://www.tuxedodental.ca/wp-content/uploads/2018/03/iStock-660563928-1024x683.jpg" alt="Product Ready">
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+</html>

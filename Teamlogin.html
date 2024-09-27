@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Authentication</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+/*          height: 100vh;
+            display: flex; */ 
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+            url('https://www.mksocks.com/cdn/shop/articles/FbyRBFEnLeOpAU2KS3QvvWzvQBWxw3DT1601472340_1296x.jpg?v=1602248055') no-repeat center center/cover ;
+/*             animation: backgroundColorChange 10s infinite alternate; */
+        }
+
+        @keyframes backgroundColorChange {
+            0% {
+                background-color: #f39c12;
+            }
+
+            50% {
+                background-color: #8e44ad;
+            }
+
+            100% {
+                background-color: #2980b9;
+            }
+        }
+
+        .login-container {
+            background-color: rgba(255, 255, 255, 0.3);
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+            animation: fadeIn 1s ease-in-out;
+          margin-left: 530px;
+          margin-top: 150px;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        h2 {
+            margin-bottom: 20px;
+            font-size: 24px;
+            color: #333;
+        }
+
+        .input-group {
+            margin-bottom: 15px;
+            text-align: left;
+        }
+
+        input[type="text"],
+        input[type="password"],
+        input[type="email"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 14px;
+            color: #333;
+            transition: border-color 0.3s ease, transform 0.3s ease;
+        }
+
+        input:focus {
+            border-color: #060606;
+            transform: scale(1.02);
+        }
+
+        .login-btn {
+            width: 100%;
+            padding: 10px;
+            background-color: #111111;
+            border: none;
+            border-radius: 4px;
+            color: #fff;
+            font-weight: bold;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+            margin-top: 10px;
+        }
+
+        .login-btn:hover {
+            background-color: #090909;
+            transform: scale(1.05);
+        }
+
+        .links {
+            margin-top: 15px;
+        }
+
+        .links a {
+            display: block;
+            margin-top: 10px;
+            color: #0a0a0a;
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.3s;
+        }
+
+        .links a:hover {
+            text-decoration: underline;
+            color: #0d0d0d;
+        }
+
+        #error-message,
+        #reset-message,
+        #signup-message {
+            color: red;
+            margin-top: 10px;
+            font-size: 14px;
+            animation: shake 0.3s ease;
+        }
+
+        @keyframes shake {
+            0% {
+                transform: translateX(0);
+            }
+
+            25% {
+                transform: translateX(-5px);
+            }
+
+            50% {
+                transform: translateX(5px);
+            }
+
+            75% {
+                transform: translateX(-5px);
+            }
+
+            100% {
+                transform: translateX(0);
+            }
+        }
+
+        .form-container {
+            display: none;
+        }
+
+        .form-container.active {
+            display: block;
+        }
+
+        @media (max-width: 1024px) {
+
+          body{
+            height: 95vh;
+          }
+
+            .login-container {
+                max-width: 30%;
+                padding: 10px;
+              margin-left: 350px;
+            }
+
+            h2 {
+                font-size: 22px;
+            }
+
+            input[type="text"],
+            input[type="password"],
+            input[type="email"] {
+                padding: 8px;
+            }
+
+            .login-btn {
+                font-size: 15px;
+            }
+        }
+
+        @media (max-width: 768px) {
+
+          body{
+            height: 97vh;
+          }
+            .login-container {
+                padding: 25px;
+                width: 40%;
+              margin-left: 250px;
+              margin-top: 320px;
+            }
+
+            h2 {
+                font-size: 20px;
+            }
+
+            input[type="text"],
+            input[type="password"],
+            input[type="email"] {
+                padding: 8px;
+            }
+
+            .login-btn {
+                font-size: 14px;
+            }
+        }
+
+        @media (max-width: 475px) {
+          body{
+            height: 96vh;
+          }
+            .login-container {
+                padding: 20px;
+                width: 70%;
+              margin-left: 150px;
+              margin-top: 325px;
+            }
+
+            h2 {
+                font-size: 18px;
+            }
+
+            input[type="text"],
+            input[type="password"],
+            input[type="email"] {
+                padding: 7px;
+            }
+
+            .login-btn {
+                font-size: 13px;
+                padding: 8px;
+            }
+
+            .links a {
+                font-size: 12px;
+            }
+        }
+
+        @media (max-width: 320px) {
+            .login-container {
+                padding: 15px;
+                width: 100%;
+            }
+
+            h2 {
+                font-size: 16px;
+            }
+
+            input[type="text"],
+            input[type="password"],
+            input[type="email"] {
+                padding: 6px;
+                font-size: 12px;
+            }
+
+            .login-btn {
+                font-size: 12px;
+                padding: 7px;
+            }
+
+            .links a {
+                font-size: 11px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="login-container">
+        <!-- Sign In Form -->
+        <div class="form-container active" id="signin-container">
+            <h2>Team Login</h2>
+            <form id="loginForm" onsubmit="return validateLogin()">
+                <div class="input-group">
+                    <input type="text" id="username" name="username" placeholder="Email Address" required>
+                </div>
+                <div class="input-group">
+                    <input type="password" id="password" name="password" placeholder="Password" required>
+                </div>
+                <button type="submit" class="login-btn">Sign In</button>
+                <div class="links">
+                    <a href="javascript:void(0)" onclick="switchForm('forgot-container')">Forgot Password?</a>
+                    <a href="javascript:void(0)" onclick="switchForm('signup-container')">Don't have an account? Sign up</a>
+                </div>
+            </form>
+            <div id="error-message"></div>
+        </div>
+
+        <!-- Sign Up Form -->
+        <div class="form-container" id="signup-container">
+            <h2>Sign Up</h2>
+            <form id="signUpForm" onsubmit="return validateSignUp()">
+                <div class="input-group">
+                    <input type="email" id="email" name="email" placeholder="Email Address" required>
+                </div>
+                <div class="input-group">
+                    <input type="password" id="password" name="password" placeholder="Password" required>
+                </div>
+                <div class="input-group">
+                    <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirm Password" required>
+                </div>
+                <div class="input-group">
+                    <input type="text" id="team" name="team" placeholder="Team Name" required>
+                </div>
+                <button type="submit" class="login-btn">Sign Up</button>
+            </form>
+            <div id="signup-message"></div>
+            <div class="links">
+                <a href="javascript:void(0)" onclick="switchForm('signin-container')">Already have an account? Sign In</a>
+            </div>
+        </div>
+
+        <!-- Forgot Password Form -->
+        <div class="form-container" id="forgot-container">
+            <h2>Reset Password</h2>
+            <form id="forgotPasswordForm" onsubmit="return sendResetLink()">
+                <div class="input-group">
+                    <input type="email" id="email" name="email" placeholder="Email Address" required>
+                </div>
+                <button type="submit" class="login-btn">Send Reset Link</button>
+            </form>
+            <div id="reset-message"></div>
+            <div class="links">
+                <a href="javascript:void(0)" onclick="switchForm('signin-container')">Back to Sign In</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Function to switch between forms
+        function switchForm(formId) {
+            // Hide all forms
+            document.querySelectorAll('.form-container').forEach(form => {
+                form.classList.remove('active');
+            });
+
+            // Show the selected form
+            document.getElementById(formId).classList.add('active');
+        }
+
+        // Sign-up form validation
+        function validateSignUp() {
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const confirmPassword = document.getElementById('confirm-password').value;
+            const signupMessage = document.getElementById('signup-message');
+
+            if (password !== confirmPassword) {
+                signupMessage.textContent = 'Passwords do not match.';
+                signupMessage.style.color = 'red';
+                return false;
+            }
+
+            signupMessage.textContent = 'Account created successfully.';
+            signupMessage.style.color = 'green';
+
+            return false;
+        }
+
+        // Forgot password form validation
+        function sendResetLink() {
+            const email = document.getElementById('email').value;
+            const resetMessage = document.getElementById('reset-message');
+
+            if (email === '') {
+                resetMessage.textContent = 'Please enter your email address.';
+                resetMessage.style.color = 'red';
+                return false;
+            }
+
+            resetMessage.textContent = 'A reset link has been sent to ${email}.';
+            resetMessage.style.color = 'green';
+            return false;
+        }
+    </script>
+</body>
+
+</html>
